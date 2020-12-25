@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>城市电梯</title>
+
+<script type="text/javascript" nonce="cd3047bc6e894847ba90837bccf" src="//local.adguard.org?ts=1607386654619&amp;type=content-script&amp;dmn=demosc.chinaz.net&amp;app=com.apple.Safari&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1&amp;sbe=0"></script><script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		height: 6000px;
+	}
+	.lift-nav{
+		position: fixed;
+		top: 15px;
+		left: 30px;
+		display: none;
+	}
+	.lift-nav li{
+		width: 10px;
+		height: 10px;
+		text-align: center;
+		line-height: 10px;
+		color: #fff;
+		padding: 10px 10px;
+		margin-bottom: 8px;
+		background: aqua;
+		cursor: pointer;
+	}
+
+	.lift-nav li.current{
+		background: pink;
+	}
+
+	.t1,.t2,.t3,.t4,.t5,.t6,
+	.t7,.t8,.t9,.t10,.t11,.t12,
+	.t13,.t14,.t15,.t16,.t17,.t18,
+	.t19,.t20,.t21,.t22,.t23,.t24{
+		width: 800px;
+		height: 400px;
+		text-align: center;
+		line-height: 400px;
+		background: skyblue;
+		margin: 100px auto;
+		font-size: 30px;
+		color: #fff;
+	}
+	span{
+		display: inline-block;
+		margin-right:200px;
+		font-size:50px;
+		font-weight: 700;
+	}
+	.t1{
+		margin-top: 100px;
+	}
+	.t2{
+		background: pink;
+	}
+	.t3{
+		background: tomato;
+	}
+	.t4{
+		background: grey;
+	}
+	.t5{
+		background: yellow;
+	}
+	.t6{
+		background: seagreen;
+	}
+	.t7{
+		background: Bisque ;
+	}
+	.t8{
+		background: BlueViolet ;
+	}
+	.t9{
+		background: Aqua;
+	}
+	.t10{
+		background: Brown;
+	}
+	.t11{
+		background: Chartreuse;
+	}
+	.t12{
+		background: Crimson;
+	}
+	.t13{
+		background: IndianRed;
+	}
+	.t14{
+		background: GoldenRod;
+	}
+	.t15{
+		background: Fuchsia;
+	}
+	.t16{
+		background: DeepPink ;
+	}
+	.t17{
+		background: YellowGreen;
+	}
+	.t18{
+		background: Turquoise ;
+	}
+	.t19{
+		background: SlateGray;
+	}
+	.t20{
+		background: Salmon;
+	}
+	.t21{
+		background: RoyalBlue ;
+	}
+	.t22{
+		background: PaleVioletRed;
+	}
+	.t23{
+		background: Gold;
+	}
+	.t24{
+		background: Chocolate ;
+		margin-bottom:500px;
+	}
+
+
+</style>
+</head>
+<body>
+
+<div class="lift-nav">
+<ul class="lift">
+	<li>A</li>
+	<li>B</li>
+	<li>C</li>
+	<li>D</li>
+	<li>E</li>
+	<li>F</li>
+	<li>G</li>
+	<li>H</li>
+	<li>I</li>
+	<li>J</li>
+	<li>K</li>
+	<li>L</li>
+	<li>M</li>
+	<li>N</li>
+	<li>O</li>
+	<li>P</li>
+	<li>Q</li>
+	<li>R</li>
+	<li>S</li>
+	<li>T</li>
+	<li>W</li>
+	<li>X</li>
+	<li>Y</li>
+	<li>Z</li>
+</ul>
+</div>
+
+<div class="lift-target">
+<div class="t1"><span> 这是A楼城市:柳州市🏙</sapn></div>
+<div class="t2"><span> 这是B楼城市:桂林市🏙</sapn></div>
+<div class="t3"><span> 这是C楼城市:南宁市🏙</sapn></div>
+<div class="t4"><span> 这是D楼城市:东莞市🏙</sapn></div>
+<div class="t5"><span> 这是E楼城市:鄂州市🏙</sapn></div>
+<div class="t6"><span> 这是F楼城市:佛山市🏙</sapn></div>
+<div class="t7"><span> 这是G楼城市:广州市🏙</sapn></div>
+<div class="t8"><span> 这是H楼城市:海口市🏙</sapn></div>
+<div class="t9"><span> 这是I楼城市:来宾市🏙</sapn></div>
+<div class="t10"><span>这是J楼城市:北京市🏙</span></div>
+<div class="t11"><span>这是K楼城市:上海市🏙</span></div>
+<div class="t12"><span>这是L楼城市:丽江市🏙</span></div>
+<div class="t13"><span>这是M楼城市:梅州市🏙</span></div>
+<div class="t14"><span>这是N楼城市:南京市🏙</span></div>
+<div class="t15"><span>这是O楼城市:崇左市🏙</span></div>
+<div class="t16"><span>这是P楼城市:莆田市🏙</span></div>
+<div class="t17"><span>这是Q楼城市:清远市🏙</span></div>
+<div class="t18"><span>这是R楼城市:日照市🏙</span></div>
+<div class="t19"><span>这是S楼城市:深圳市🏙</span></div>
+<div class="t20"><span>这是T楼城市:台州市🏙</span></div>
+<div class="t21"><span>这是W楼城市:武汉市🏙</span></div>
+<div class="t22"><span>这是X楼城市:西安市🏙</span></div>
+<div class="t23"><span>这是Y楼城市:永州市🏙</span></div>
+<div class="t24"><span>这是Z楼城市:中山市🏙</span></div>
+</div>
+
+<script>
+
+$(function(){
+	LiftEffect({
+		"control1": ".lift-nav",                          //侧栏电梯的容器
+		"control2": ".lift",                           //需要遍历的电梯的父元素
+		"target": [".t1",".t2",".t3",".t4",".t5",".t6",".t7",".t8",".t9",".t10",".t11",".t12",".t13",".t14",".t15",".t16",".t17",".t18",".t19",".t20",".t21",".t22",".t23",".t24",], //监听的内容，注意一定要从小到大输入
+		"current": "current"                          //选中的样式
+	});
+
+
+})
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+<p>全球开发者：<a href="https://www.apple.com.cn/macbook-pro-16/" target="_blank">凯凯-karry@qq.com<div class="mui-col-sm-6">点击试一下</div>
+<div class="mui-col-sm-6">您辛苦了</div></a></p>
+<a href="http://diliktv.com/" target="_blank">特效在这里
+
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=nayspKikqayvpK3d7Oyz-vLw" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_21.png"/></a>
+
+
+</div>
+</body>
+</html>
